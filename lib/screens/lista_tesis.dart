@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../models/tesis.dart';
 import 'detalle_tesis.dart';
-import '../data/tesis_data.dart';  // Lista global
+import '../data/tesis_data.dart';  
 
 class ListaTesisScreen extends StatefulWidget {
-  final String role;  // 'docente' o 'estudiante'
-  final String username;  // Nombre del docente o estudiante
+  final String role; 
+  final String username;  
 
   ListaTesisScreen({required this.role, required this.username});
 
@@ -37,13 +37,13 @@ class _ListaTesisScreenState extends State<ListaTesisScreen> {
                   SizedBox(height: 8),
                   Text(tesis.descripcion, style: TextStyle(fontSize: 14, color: Colors.grey[600])),
                   SizedBox(height: 12),
-                  Text('Autor: ${tesis.autor}'),  // Mostrar el autor
+                  Text('Autor: ${tesis.autor}'),  
                   if (tesis.evaluador != null)
-                    Text('Evaluador: ${tesis.evaluador}'),  // Mostrar el evaluador si existe
+                    Text('Evaluador: ${tesis.evaluador}'),  
                   if (tesis.estado == 'aprobada')
-                    Text('Aprobada por Docente: ${tesis.evaluador}'),  // Mostrar aprobación por el docente
+                    Text('Aprobada por Docente: ${tesis.evaluador}'),  
                   if (tesis.estado == 'rechazada' && tesis.comentario != null)
-                    Text('Comentario: ${tesis.comentario}'),  // Mostrar comentario si la tesis fue rechazada
+                    Text('Comentario: ${tesis.comentario}'), 
                   SizedBox(height: 10),
                   IconButton(
                     icon: Icon(Icons.arrow_forward_ios),
@@ -58,7 +58,7 @@ class _ListaTesisScreenState extends State<ListaTesisScreen> {
                           ),
                         ),
                       ).then((_) {
-                        setState(() {});  // Refrescar pantalla después de volver de DetalleTesisScreen
+                        setState(() {}); 
                       });
                     },
                   ),

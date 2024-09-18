@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/tesis.dart';
-import '../data/tesis_data.dart';  // Importamos la lista de tesis
-import 'detalle_tesis.dart';  // Importamos la pantalla de detalles
+import '../data/tesis_data.dart';  
+import 'detalle_tesis.dart';
 
 class VerTesisScreen extends StatelessWidget {
   const VerTesisScreen({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class VerTesisScreen extends StatelessWidget {
                   Text('Estado: ${tesis.estado}'),
                   Text('Autor: ${tesis.autor}'),
                   if (tesis.evaluador != null && tesis.evaluador!.isNotEmpty)
-                    Text('Calificada por: ${tesis.evaluador}'),  // Mostrar el nombre del evaluador si existe
+                    Text('Calificada por: ${tesis.evaluador}'), 
                   if (tesis.estado == 'rechazada' && tesis.comentario != null)
                     Text('Comentario: ${tesis.comentario}'),
                   const SizedBox(height: 10),
@@ -47,8 +47,8 @@ class VerTesisScreen extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => DetalleTesisScreen(
                             tesis: tesis,
-                            role: 'viewer',  // Pasamos 'viewer' para indicar que no es ni docente ni estudiante
-                            evaluador: tesis.evaluador ?? '',  // Pasamos el evaluador si está disponible
+                            role: 'viewer',  
+                            evaluador: tesis.evaluador ?? '',  
                           ),
                         ),
                       );

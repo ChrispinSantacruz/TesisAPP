@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
-import 'ver_tesis.dart';  // Nueva pantalla para ver tesis sin login
+import 'ver_tesis.dart';  
 
 class HomeScreen extends StatelessWidget {
   @override

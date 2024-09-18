@@ -2,10 +2,10 @@ class Tesis {
   String titulo;
   String descripcion;
   String archivo;
-  String estado;  // 'pendiente', 'aprobada', 'rechazada'
-  String autor;   // Nombre del estudiante que subió la tesis
-  String? evaluador;  // Nombre del docente que calificó la tesis (opcional)
-  String? comentario;  // Comentario del docente si es rechazada
+  String estado;  
+  String autor;   
+  String? evaluador;  
+  String? comentario;  
 
   Tesis({
     required this.titulo,

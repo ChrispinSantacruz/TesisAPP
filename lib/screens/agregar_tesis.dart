@@ -7,7 +7,7 @@ import '../data/tesis_data.dart';
 
 class AgregarTesisScreen extends StatefulWidget {
   final Function(Tesis) onAgregarTesis;
-  final String username;  // Nombre del estudiante que sube la tesis
+  final String username;  
 
   AgregarTesisScreen({required this.onAgregarTesis, required this.username});
 
@@ -47,7 +47,7 @@ class _AgregarTesisScreenState extends State<AgregarTesisScreen> {
         titulo: _tituloController.text,
         descripcion: _descripcionController.text,
         archivo: _archivo!,
-        autor: widget.username,  // Guardamos el nombre del estudiante como autor
+        autor: widget.username,  
       );
 
       listaDeTesis.add(nuevaTesis);

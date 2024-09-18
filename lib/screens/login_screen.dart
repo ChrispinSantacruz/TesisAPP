@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onAgregarTesis: (nuevaTesis) {
                         print('Tesis agregada: ${nuevaTesis.titulo}');
                       },
-                      username: _userController.text,  // Pasamos el nombre del estudiante
+                      username: _userController.text,  
                     ),
                   ),
                 );

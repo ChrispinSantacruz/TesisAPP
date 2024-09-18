@@ -3,8 +3,8 @@ import '../models/tesis.dart';
 
 class DetalleTesisScreen extends StatefulWidget {
   final Tesis tesis;
-  final String role;  // 'docente', 'estudiante' o 'viewer'
-  final String evaluador;  // Nombre del docente que evaluó la tesis
+  final String role;  
+  final String evaluador;  
 
   DetalleTesisScreen({required this.tesis, required this.role, required this.evaluador});
 
@@ -19,16 +19,16 @@ class _DetalleTesisScreenState extends State<DetalleTesisScreen> {
     setState(() {
       widget.tesis.estado = nuevoEstado;
       if (nuevoEstado == 'rechazada') {
-        widget.tesis.comentario = _comentarioController.text;  // Guardar el comentario al rechazar
+        widget.tesis.comentario = _comentarioController.text;  
       }
-      widget.tesis.evaluador = widget.evaluador;  // Guardar el evaluador al aprobar o rechazar
+      widget.tesis.evaluador = widget.evaluador;  
     });
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(nuevoEstado == 'aprobada'
           ? 'Tesis aprobada correctamente'
           : 'Tesis rechazada con comentario'),
     ));
-    Navigator.pop(context);  // Regresar a la lista de tesis
+    Navigator.pop(context); 
   }
 
   void _mostrarDialogoRechazo() {
@@ -52,7 +52,7 @@ class _DetalleTesisScreenState extends State<DetalleTesisScreen> {
               child: Text('Rechazar'),
               onPressed: () {
                 _cambiarEstado('rechazada');
-                Navigator.pop(context);  // Cerrar el diálogo
+                Navigator.pop(context);  
               },
             ),
           ],
@@ -93,10 +93,8 @@ class _DetalleTesisScreenState extends State<DetalleTesisScreen> {
               ],
             ),
             SizedBox(height: 20),
-            // Mostrar el evaluador si la tesis ha sido calificada
             if (widget.tesis.evaluador != null && widget.tesis.evaluador!.isNotEmpty)
               Text('Calificada por: ${widget.tesis.evaluador}', style: TextStyle(fontSize: 16)),
-            // Mostrar el comentario si la tesis ha sido rechazada
             if (widget.tesis.estado == 'rechazada' && widget.tesis.comentario != null)
               Text('Comentario del Rechazo: ${widget.tesis.comentario}', style: TextStyle(fontSize: 16)),
             SizedBox(height: 20),
