@@ -1,5 +1,3 @@
-// Archivo de Gradle de nivel de raíz (nivel de proyecto) (<project>/build.gradle)
-
 buildscript {
     repositories {
         google()
