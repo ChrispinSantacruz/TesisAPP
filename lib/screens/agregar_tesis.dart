@@ -7,9 +7,9 @@ import '../data/tesis_data.dart';
 
 class AgregarTesisScreen extends StatefulWidget {
   final Function(Tesis) onAgregarTesis;
-  final String username;  
+  final String username;
 
-  AgregarTesisScreen({required this.onAgregarTesis, required this.username});
+  const AgregarTesisScreen({required this.onAgregarTesis, required this.username, Key? key}) : super(key: key);
 
   @override
   _AgregarTesisScreenState createState() => _AgregarTesisScreenState();
@@ -47,11 +47,10 @@ class _AgregarTesisScreenState extends State<AgregarTesisScreen> {
         titulo: _tituloController.text,
         descripcion: _descripcionController.text,
         archivo: _archivo!,
-        autor: widget.username,  
+        autor: widget.username,
       );
 
-      listaDeTesis.add(nuevaTesis);
-
+      TesisService().addTesis(nuevaTesis);  // Conexión a Firebase
       widget.onAgregarTesis(nuevaTesis);
       Navigator.pop(context);
     }
@@ -61,7 +60,7 @@ class _AgregarTesisScreenState extends State<AgregarTesisScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Agregar Tesis'),
+        title: const Text('Agregar Tesis'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -69,21 +68,21 @@ class _AgregarTesisScreenState extends State<AgregarTesisScreen> {
           children: [
             TextField(
               controller: _tituloController,
-              decoration: InputDecoration(labelText: 'Título de la Tesis'),
+              decoration: const InputDecoration(labelText: 'Título de la Tesis'),
             ),
             TextField(
               controller: _descripcionController,
-              decoration: InputDecoration(labelText: 'Descripción'),
+              decoration: const InputDecoration(labelText: 'Descripción'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _seleccionarArchivo,
               child: Text(_archivo == null ? 'Seleccionar Archivo PDF' : 'Archivo: $_archivo'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _guardarTesis,
-              child: Text('Guardar Tesis'),
+              child: const Text('Guardar Tesis'),
             ),
           ],
         ),
