@@ -2,10 +2,10 @@ class Tesis {
   String titulo;
   String descripcion;
   String archivo;
-  String estado;  
-  String autor;   
-  String? evaluador;  
-  String? comentario;  
+  String estado;
+  String autor;
+  String? evaluador;
+  String? comentario;
 
   Tesis({
     required this.titulo,

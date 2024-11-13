@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/tesis.dart';
 import 'detalle_tesis.dart';
-import '../data/tesis_data.dart';
+import '../services/tesis_services.dart';
 
 class ListaTesisScreen extends StatefulWidget {
   final String role;

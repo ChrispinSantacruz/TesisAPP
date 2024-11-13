@@ -3,7 +3,8 @@ import 'package:file_picker/file_picker.dart';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import '../models/tesis.dart';
-import '../data/tesis_data.dart';
+import '../services/tesis_services.dart';
+
 
 class AgregarTesisScreen extends StatefulWidget {
   final Function(Tesis) onAgregarTesis;
